@@ -5,7 +5,7 @@ SERVICE="ssh"
 ATTEMPTS=70
 SPEED=0.04
 SLEEP_BETWEEN=0.06
-BANNER_TITLE="BRO H4CK SIMULATOR"
+BANNER_TITLE="SAKIB WI-FI BRUTE"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -26,7 +26,7 @@ sleep 0.6
 
 echo -e "${YELLOW}Target:${RESET} $TARGET"
 echo -e "${YELLOW}Service:${RESET} $SERVICE"
-echo -e "${YELLOW}Starting fake brute-force...${RESET}"
+echo -e "${YELLOW}Starting harmful brute-force...${RESET}"
 echo
 
 usernames=(root admin user test guest hackerman alex)
@@ -56,4 +56,4 @@ sleep 0.6
 echo
 echo -e "${RED}${BOLD}ERROR:${RESET} your device is not comfortable for this action"
 echo
-exit 1
+exit 2
