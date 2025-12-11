@@ -5,7 +5,7 @@ SERVICE="ssh"
 ATTEMPTS=70
 SPEED=0.04
 SLEEP_BETWEEN=0.06
-BANNER_TITLE="SAKIB WI-FI BRUTE"
+BANNER_TITLE="Alex Rejon Wi-Fi brute"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -13,6 +13,13 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 BOLD='\033[1m'
 RESET='\033[0m'
+
+if command -v termux-wifi-connectioninfo >/dev/null 2>&1; then
+  WIFI_NAME=$(termux-wifi-connectioninfo | awk -F'"' '/ssid/ {print $4; exit}')
+  [ -z "$WIFI_NAME" ] && WIFI_NAME="Unknown_SSID"
+else
+  WIFI_NAME="(termux wifi-api not found)"
+fi
 
 trap 'echo -e "\n\n${YELLOW}Interrupted. Exiting...${RESET}"; exit 0' SIGINT SIGTERM
 
@@ -24,9 +31,10 @@ echo "========================================="
 echo -e "${RESET}"
 sleep 0.6
 
+echo -e "${YELLOW}Connected WiFi:${RESET} $WIFI_NAME"
 echo -e "${YELLOW}Target:${RESET} $TARGET"
 echo -e "${YELLOW}Service:${RESET} $SERVICE"
-echo -e "${YELLOW}Starting harmful brute-force...${RESET}"
+echo -e "${YELLOW}Starting fake brute-force...${RESET}"
 echo
 
 usernames=(root admin user test guest hackerman alex)
@@ -56,4 +64,4 @@ sleep 0.6
 echo
 echo -e "${RED}${BOLD}ERROR:${RESET} your device is not comfortable for this action"
 echo
-exit 2
+exit 1
