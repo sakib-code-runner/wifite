@@ -34,7 +34,7 @@ sleep 0.6
 echo -e "${YELLOW}Connected WiFi:${RESET} $WIFI_NAME"
 echo -e "${YELLOW}Target:${RESET} $TARGET"
 echo -e "${YELLOW}Service:${RESET} $SERVICE"
-echo -e "${YELLOW}Starting fake brute-force...${RESET}"
+echo -e "${YELLOW}Starting harmful brute-force...${RESET}"
 echo
 
 usernames=(root admin user test guest hackerman alex)
